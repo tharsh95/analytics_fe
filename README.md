@@ -1,10 +1,12 @@
 # Project setup
 ## Installation
 
-
-1. **Clone the repo
+1 Clone the repo
  ```sh
-
+git clone https://github.com/tharsh95/analytics_fe.git
+```
+```sh
+cd analytics_fe
 ```
 2 **Install Dependencies**
    ```sh
@@ -18,13 +20,13 @@ Start the development server with:
 npm run dev
 ```
 The application will be available at `http://localhost:5173/` by default.
-
+ No need to fill env i have already env and diidnt gitignored it
 
 
 ## Project Structure
 
 ```
-my-vite-app/
+analytics_fe
 ├── public/         # Static assets
 ├── src/            # Main source code
 │   ├── components/ # Reusable components
