@@ -25,12 +25,15 @@ const StatsOverview = () => {
 
   // Ensure safe access with default values
   const { purchases = 0, revenue = 0, refunds = 0 } = data || {};
-
+  const formatted = purchases.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+  const formatNumber = (num: number) => num >= 1000 
+  ? (num / 1000).toFixed(2).replace(/\.?0+$/, "") + "k" 
+  : num.toString();
   return (
     <div className="flex justify-around mt-8">
-      <StatCard title="Purchases" value={purchases} trend="up" tvalue="32%" />
-      <StatCard title="Revenue" value={revenue} trend="up" tvalue="48%" />
-      <StatCard title="Refunds" value={refunds} trend="down" tvalue="7%" />
+      <StatCard title="Purchases" value={formatted} trend="up" tvalue="32%" />
+      <StatCard title="Revenue" value={formatNumber(revenue)} trend="up" tvalue="48%" />
+      <StatCard title="Refunds" value={formatNumber(refunds)} trend="down" tvalue="7%" />
     </div>
   );
 }

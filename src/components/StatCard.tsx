@@ -1,6 +1,6 @@
 interface StatCardProps {
   title: string;
-  value: number;
+  value: string;
   trend?: "up" | "down"; // Optional, must be "up" or "down"
   tvalue?: string; // Optional percentage change value
 }
