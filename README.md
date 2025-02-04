@@ -20,8 +20,8 @@ Start the development server with:
 npm run dev
 ```
 The application will be available at `http://localhost:5173/` by default.
- No need to fill env i have already env and diidnt gitignored it
-
+ ## No need to fill env i have already env and diidnt gitignored it###
+## No need to setup backend already deployed backend
 
 ## Project Structure
 
