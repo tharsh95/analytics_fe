@@ -8,6 +8,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import useFetch from "@/hooks/useFetch";
+import TopProductsSkeleton from "./ui/ProductSkeleton";
 
 
 interface Products {
@@ -22,7 +23,7 @@ interface Products {
 function TopProducts() {
   const { data, loading, error } = useFetch<Products[]>(`${import.meta.env.VITE_BE_URL}/six`);
   console.log(data, "kk");
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <TopProductsSkeleton/>;
   if (error) return <p>Error: {error.message}</p>;
   return (
     <div className="mt-4">

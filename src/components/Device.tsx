@@ -36,7 +36,7 @@ const chartConfig = {
 
 export function Device() {
   return (
-    <Card>
+    <Card className="">
       <CardHeader>
         <CardTitle>Customers by Device</CardTitle>
       </CardHeader>

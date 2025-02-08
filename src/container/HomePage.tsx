@@ -8,23 +8,42 @@ import TopProducts from '@/components/TopProducts'
 
 const HomePage = () => {
   return (
-    <div className="flex min-h-screen p-4 bg-white">
-    <div className="w-1/6 ">
-      <Sidebar />
+    <div className="flex p-4 bg-white gap-4"> {/* Ensures even spacing between sections */}
+      {/* Sidebar */}
+      <div className="w-1/6">
+        <Sidebar />
+      </div>
+
+      {/* Main Content */}
+      <div className="bg-white shadow-2xl rounded-lg w-4/6 flex flex-col border-2 border-gray-200 p-4 space-y-4">
+        <h1 className="font-bold text-3xl">Dashboard</h1>
+        <StatsOverview />
+
+        {/* Wrapped ComparisonChart and TopProducts */}
+        <div className="space-y-4 border-2 border-gray-200 rounded-lg p-4 bg-white">
+          <ComparisonChart />
+        </div>
+        <div className="space-y-4 border-2 border-gray-200 rounded-lg p-4 bg-white">
+          <TopProducts />
+        </div>
+      </div>
+
+      {/* Right Sidebar */}
+      <div className="w-2/6 flex flex-col space-y-4 h-full"> {/* Adds spacing between stacked cards */}
+        <div className="bg-white border-2 border-gray-200 rounded-lg p-4">
+          <PerformanceScore />
+        </div>
+        <div className="bg-white border-2 border-gray-200 rounded-lg p-4">
+          <Device />
+        </div>
+        <div className="bg-white border-2 border-gray-200 rounded-lg p-4">
+          <CommunityFeedback />
+        </div>
+      </div>
     </div>
-    <div className="bg-white shadow-2xl rounded-lg w-4/6 flex flex-col">
-    <h1 className="font-bold text-3xl m-4">Dashboard</h1>
-      <div className="flex-1 "><StatsOverview /></div>
-    <div className=" bg-white border-2 border-gray-200 rounded-lg"><ComparisonChart /></div>
-      <div className="flex-1 bg-white border-2 border-gray-200 rounded-lg"><TopProducts /></div>
-    </div>
-    <div className="ml-4 w-2/6 flex flex-col space-y-4">
-      <div className="flex-1 bg-white border-2 border-gray-200 rounded-lg p-4"><PerformanceScore/></div>
-      <div className=" bg-white rounded-lg"><Device/></div>
-      <div className="flex-1 bg-white border-2 border-gray-200 rounded-lg"><CommunityFeedback/></div>
-    </div>
-  </div>
-  )
-}
+  );
+};
+
+
 
 export default HomePage

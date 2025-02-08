@@ -14,6 +14,7 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart";
 import useFetch from "@/hooks/useFetch";
+import ComparisonChartSkeleton from '@/components/ui/ComparisonSkeleton'
 
 const chartConfig: ChartConfig = {
   last_year: {
@@ -38,7 +39,7 @@ export function ComparisonChart() {
 
   const { data, loading, error } = useFetch<ChartDataItem[]>(`${import.meta.env.VITE_BE_URL}/two`);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <ComparisonChartSkeleton/>
   if (error) return <p>Error: {error.message}</p>;
 
   const chartData = data ? data.map((item) => ({
